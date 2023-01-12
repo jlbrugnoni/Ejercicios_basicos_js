@@ -39,4 +39,3 @@ alert("La nota media de " + nombre + " es " + nota_media);
 alert("Final de Ejercicio 1.");
 
 // Pruena de que se hizo correctamente el push
-
