@@ -33,8 +33,8 @@ console.log("La nota media es " + nota_media);
 
 // se imprime los resultados tanto por consola como por un alert
 
-console.log("La nota media de " + nombre + " es " + nota_media);
-alert("La nota media de " + nombre + " es " + nota_media);
+console.log("La nota media de " + nombre + " es " + nota_media.toFixed(2));
+alert("La nota media de " + nombre + " es " + nota_media.toFixed(2));
 
 alert("Final de Ejercicio 1.");
 

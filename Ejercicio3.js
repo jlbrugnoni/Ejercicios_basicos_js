@@ -14,7 +14,7 @@ estat_cm = estat_pulg * 2.54;
 
 imc = peso_kg/((estat_cm)/100)**2;
 
-alert("Tiene un peso de " + peso_kg + "kg y una estatura de " + estat_cm + "cm. Su Indice de Masa Coporal es de " + imc);
-console.log("Tiene un peso de " + peso_kg + "kg y una estatura de " + estat_cm + "cm. Su Indice de Masa Coporal es de " + imc);
+alert("Tiene un peso de " + peso_kg.toFixed(2) + "kg y una estatura de " + estat_cm.toFixed(2) + "cm. Su Indice de Masa Coporal es de " + imc.toFixed(2));
+console.log("Tiene un peso de " + peso_kg.toFixed(2) + "kg y una estatura de " + estat_cm.toFixed(2) + "cm. Su Indice de Masa Coporal es de " + imc.toFixed(2));
 
 alert("Fin de Ejercicio 3");

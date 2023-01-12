@@ -15,7 +15,7 @@ t_celsius = ((t_far-32)/1.8);
 
 // Imprimo por pantalla y consola los valores de los grados F y los grados C calculados.
 
-alert("El valor de " + t_far + "F en grados Celsius es de " + t_celsius + "C");
-console.log("El valor de " + t_far + "F en grados Celsius es de " + t_celsius + "C");
+alert("El valor de " + t_far + "F en grados Celsius es de " + t_celsius.toFixed(2) + "C");
+console.log("El valor de " + t_far + "F en grados Celsius es de " + t_celsius.toFixed(2) + "C");
 
 alert("Final de Ejercicio 2");
