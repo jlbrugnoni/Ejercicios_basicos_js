@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo2">Fetch a file to change this text.</p> 
+    <script>
+
+        /*
+        let file = "fetch_info.txt"
+   fetch (file)
+   .then((response) => response.text())
+   .then((txt) => document.getElementById("demo").innerHTML = txt); */
+    let file = "fetch_info.txt"
+    fetch (file)
+     //Con el método text() obtengo la respuesta
+     .then(function(response) {
+         return response.text();
+     })
+//Con el siguiente then la función recibe en txt la respuesta obtenida anteriormente
+.then(function(txt) {
+    document.getElementById("demo2").innerHTML = txt })
+
+   </script>
+
+<p id="demo">Fetch a file to change this text.</p> 
+<script>
+    /*
+    getText("fetch_info.txt");
+async function getText(file) {
+let myObject = await fetch(file);
+let myText = await myObject.text(); document.getElementById("demo").innerHTML = myText;
+} */
+
+async function obtenerUsuarios() {
+       // Realiza la petición
+const miFetch = await fetch('https://jsonplaceholder.typicode.com/users');
+// Transforma la respuesta. En este caso lo convierte a JSON
+       const json = await miFetch.json();
+       // Imprimo por consola
+       console.log(json);
+     }
+     obtenerUsuarios();
+</script>
+
+
+
+<!--
+<script>
+let json = JSON.stringify({
+        name: "John",
+        surname: "Smith"
+ });
+ xhr.open("POST", user.php)
+ xhr.setRequestHeader('Content-type', 'application/json; charset=utf- 8');
+ xhr.send(json);
+</script>
+-->
+
+<button type="button" onclick="loadXMLDoc()">Click Me</button> 
+<p id="demo"></p>
+<script>
+function loadXMLDoc() {
+    var xmlhttp = new XMLHttpRequest(); 
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        myTable(this);
+    } 
+};
+//Ejecutado desde la consola de desarrollo de W3Schools
+/* https://www.w3schools.com/xml/tryit.asp?filename=try_dom_xmlhttpr equest_responsexml
+*/
+xmlhttp.open("GET", "cd_catalog.xml", true); 
+xmlhttp.send();
+}
+function myTable(xml) {
+    var x, y, i, xmlDoc, txt;
+    xmlDoc = xml.responseXML;
+    txt= "<table border='1'>";
+    txt += "<thead><th>Artist</th><th>Title</th></thead><tbody>"; x = xmlDoc.getElementsByTagName("ARTIST");
+    y = xmlDoc.getElementsByTagName("TITLE");
+    for (i = 0; i< x.length; i++) {
+        txt += "<tr><td>" + x[i].childNodes[0].nodeValue + "</td>";
+        txt += "<td>" + y[i].childNodes[0].nodeValue + "</td></tr>"; 
+    }
+    txt += "</tbody></table>";
+    document.getElementById("demo").innerHTML = txt; 
+}
+</script>
+</body>
+</html>
